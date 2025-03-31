@@ -11,7 +11,7 @@ services:
 #sesuaikan dengan direktori di server hocker host
             - /home/xen:/var/www/html
         networks:
-            - proxy
+            - macvlan_network
     cups:
         image: 192.168.30.219:5000/sysadmin/simars-cups:0
         container_name: cups
@@ -27,10 +27,10 @@ services:
         volumes:
             - cups_data:/etc/cups
         networks:
-            - proxy
+            - macvlan_network
 
 networks:
-  proxy:
+  macvlan_network:
     external: true
 
 volumes:
