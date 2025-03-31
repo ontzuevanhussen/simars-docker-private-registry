@@ -4,12 +4,12 @@ services:
         container_name: simars_app
         restart: always
         ports:
-            - 8080:80
+            - 80:80
         environment:
             - TZ=Asia/Jakarta
         volumes:
 #sesuaikan dengan direktori di server hocker host
-            - /home/xen:/var/www/html
+            - /home/xen/simars_web:/var/www/html
         networks:
             - macvlan_network
     cups:
